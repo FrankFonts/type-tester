@@ -1,0 +1,40 @@
+<div>
+    {{ fontSize }}
+</div>
+<div>
+    <input type="range" data-property="fontSize" min="12" max="200" step="1" value="{{fontSize}}" (input)="fontSizeChanged($event.target ) ">
+
+</div>
+
+<div>
+    {{ lineHeight }}
+</div>
+<div>
+    <input type="range" data-property="lineHeight" min=".6" max="2" step=".001" value="{{lineHeight}}" (input)="lineHeightChanged($event.target ) ">
+</div>
+
+
+<div>
+    {{ letterSpacing }}
+</div>
+<div>
+    <input type="range" data-property="letterSpacing" min="-.05" max=".05" step=".001" value="{{letterSpacing}}" (input)="letterSpacingChanged($event.target ) ">
+</div>
+
+
+
+
+
+<div style="
+font-family: {{fontFamily}};
+font-size: {{fontSize}}px;
+line-height: {{lineHeight}};
+letter-spacing: {{letterSpacing}}em;
+">
+
+
+    Webáruházunkat a SimplePay online fizetési rendszere szolgálja ki, eztáltal gyors, kényelmes, és biztonságos bankkártyási fizetési lehetőséget tudunk kínálni. A fizetéskor átirányítunk a SimplePay online felületére, itt kell megadnod a bankkártyád adatait.
+    Több különböző típusú kártyával is fizethetsz, így például VISA, VISA Electron, MasterCard, Maestro kártyákkal is.
+
+
+</div>
