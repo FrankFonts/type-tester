@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  theme: string = 'dark';
   sampleList = [
     {
       fontFamily: 'FR Rupp Mono',
@@ -20,4 +21,7 @@ export class AppComponent {
       letterSpacing: 0.05,
     },
   ];
+  setTheme(theme: string) {
+    this.theme = theme;
+  }
 }

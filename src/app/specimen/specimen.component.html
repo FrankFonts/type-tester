@@ -1,5 +1,5 @@
 <div>
-    {{ fontSize }}
+    <input type="text" data-property="fontSize" min="12" max="200" step="1" value="{{fontSize}}" (input)="fontSizeChanged($event.target ) ">
 </div>
 <div>
     <input type="range" data-property="fontSize" min="12" max="200" step="1" value="{{fontSize}}" (input)="fontSizeChanged($event.target ) ">
@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    {{ lineHeight }}
+    <input type="text" data-property="lineHeight" min=".6" max="2" step=".001" value="{{lineHeight}}" (input)="lineHeightChanged($event.target ) ">
 </div>
 <div>
     <input type="range" data-property="lineHeight" min=".6" max="2" step=".001" value="{{lineHeight}}" (input)="lineHeightChanged($event.target ) ">
@@ -15,7 +15,7 @@
 
 
 <div>
-    {{ letterSpacing }}
+    <input type="text" data-property="letterSpacing" min="-.05" max=".05" step=".001" value="{{letterSpacing}}" (input)="letterSpacingChanged($event.target ) ">
 </div>
 <div>
     <input type="range" data-property="letterSpacing" min="-.05" max=".05" step=".001" value="{{letterSpacing}}" (input)="letterSpacingChanged($event.target ) ">
@@ -25,7 +25,7 @@
 
 
 
-<div style="
+<div class="specimen__text" style="
 font-family: {{fontFamily}};
 font-size: {{fontSize}}px;
 line-height: {{lineHeight}};

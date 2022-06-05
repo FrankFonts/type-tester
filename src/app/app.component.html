@@ -1,10 +1,9 @@
-Hello
-
-
-
-
-<div *ngIf="sampleList">
-    <div *ngFor="let sample of sampleList">
-        <app-specimen [fontFamily]="sample.fontFamily" [fontSize]="sample.fontSize" [lineHeight]="sample.lineHeight" [letterSpacing]="sample.letterSpacing"></app-specimen>
+<div [ngClass]="theme">
+    <div class="theme__toggle" (click)="setTheme('theme--dark')">Dark</div>
+    <div class="theme__toggle" (click)="setTheme('theme--light')">Light</div>
+    <div *ngIf="sampleList">
+        <div *ngFor="let sample of sampleList">
+            <app-specimen [fontFamily]="sample.fontFamily" [fontSize]="sample.fontSize" [lineHeight]="sample.lineHeight" [letterSpacing]="sample.letterSpacing"></app-specimen>
+        </div>
     </div>
 </div>
