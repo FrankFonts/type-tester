@@ -1,9 +1,46 @@
-<div [ngClass]="theme">
-    <div class="theme__toggle" (click)="setTheme('theme--dark')">Dark</div>
-    <div class="theme__toggle" (click)="setTheme('theme--light')">Light</div>
-    <div *ngIf="sampleList">
-        <div *ngFor="let sample of sampleList">
-            <app-specimen [fontFamily]="sample.fontFamily" [fontSize]="sample.fontSize" [lineHeight]="sample.lineHeight" [letterSpacing]="sample.letterSpacing"></app-specimen>
+<div class="" [ngClass]="theme">
+    <div class="container-full">
+        <div class="row">
+            <div class="theme__toggle col-2" (click)="setTheme('theme--dark')">Dark</div>
+            <div class="theme__toggle col-2" (click)="setTheme('theme--light')">Light</div>
         </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-2">
+                <input type="range" data-property="fontSize" min="12" max="200" step="1" value="{{fontSize}}" (input)="fontSizeChanged($event.target ) ">
+            </div>
+            <div class="col-2">
+                <input type="text" class="font-size" data-property="fontSize" min="12" max="200" step="1" value="{{fontSize}}" (input)="fontSizeChanged($event.target ) ">
+            </div>
+
+            <div class="col-2">
+                <input type="range" data-property="lineHeight" min=".6" max="2" step=".001" value="{{lineHeight}}" (input)="lineHeightChanged($event.target ) ">
+            </div>
+            <div class="col-2">
+                <input type="text" data-property="lineHeight" min=".6" max="2" step=".001" value="{{lineHeight}}" (input)="lineHeightChanged($event.target ) ">
+            </div>
+
+            <div class="col-2">
+                <input type="range" data-property="letterSpacing" min="-.05" max=".05" step=".001" value="{{letterSpacing}}" (input)="letterSpacingChanged($event.target ) ">
+            </div>
+            <div class="col-2">
+                <input type="text" data-property="letterSpacing" min="-.05" max=".05" step=".001" value="{{letterSpacing}}" (input)="letterSpacingChanged($event.target ) ">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-full">
+        <div class="row">
+            <div class="theme__toggle col-12" (input)="setSampleText($event.target)">
+                <input type="text" value="{{sampleText}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="sampleList container-full" *ngFor="let sample of sampleList">
+        <app-specimen class="row" [fontFamily]="sample.fontFamily" [fontSize]="sample.fontSize" [lineHeight]="sample.lineHeight" [letterSpacing]="sample.letterSpacing" [sampleText]="sampleText"></app-specimen>
     </div>
 </div>

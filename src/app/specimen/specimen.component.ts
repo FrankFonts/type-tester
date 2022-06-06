@@ -8,16 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SpecimenComponent implements OnInit {
   constructor() {}
 
+  // fonts = fonts;
+
   ngOnInit(): void {}
 
   @Input() fontFamily: string = '';
+  @Input() sampleText: string = '';
   @Input() fontSize: number = 0;
   @Input() lineHeight: number = 0;
   @Input() letterSpacing: number = 0;
 
   fontSizeChanged(e: any) {
-    // console.log(e.value, e.getAttribute('data-property'));
-    // let property: any = e.getAttribute('data-property');
     this.fontSize = e.value;
   }
 
